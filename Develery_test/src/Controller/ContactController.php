@@ -16,7 +16,7 @@ use Twig\Environment;
 class ContactController extends AbstractController
 {
     /**
-     * @route("/show") 
+     * @route("/contact") 
      */
     public function show(Environment $twig, Request $request, EntityManagerInterface $entityManager)
     {
@@ -33,9 +33,6 @@ class ContactController extends AbstractController
 
             return new Response('Köszönjük szépen a kérdésedet.
             Válaszunkkal hamarosan keresünk a megadott e-mail címen.');
-        }
-        else {
-            return new Response('Hiba! Kérjük töltse ki az összes mezőt');
         }
 
         return new Response($twig->render('User/show.html.twig',[
